@@ -1,8 +1,31 @@
 <h2>Thêm sách</h2>
 <form method="post" enctype="multipart/form-data" action="<?= BASE_URL . '?action=books/create' ?>">
-  <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Tên sách</label><input class="form-control" name="name" required></div><div class="col-md-3 mb-3"><label class="form-label">Giá</label><input class="form-control" name="price" type="number" min="0" step="0.01" value="0"></div><div class="col-md-3 mb-3"><label class="form-label">Số lượng</label><input class="form-control" name="quantity" type="number" min="0" value="0"></div></div>
-  <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Danh mục</label><select class="form-control" name="category_id" required><option value="">-- Chọn danh mục --</option><?php foreach ($categories as $category): ?><option value="<?= $category['id'] ?>"><?= e($category['name']) ?></option><?php endforeach; ?></select></div><div class="col-md-6 mb-3"><label class="form-label">Tác giả</label><select class="form-control" name="author_id" required><option value="">-- Chọn tác giả --</option><?php foreach ($authors as $author): ?><option value="<?= $author['id'] ?>"><?= e($author['name']) ?></option><?php endforeach; ?></select></div></div>
-  <div class="mb-3"><label class="form-label">Ảnh bìa</label><input class="form-control" type="file" name="image" accept="image/jpeg,image/png,image/gif,image/webp"></div>
-  <div class="mb-3"><label class="form-label">Trạng thái</label><select class="form-control" name="status"><option value="1">Hiện</option><option value="0">Ẩn</option></select></div>
-  <button class="btn btn-success">Lưu</button><a class="btn btn-secondary" href="<?= BASE_URL . '?action=books' ?>">Quay lại</a>
+  <div class="row">
+    <div class="col-md-6 mb-3"><label class="form-label">Tên sách</label><input class="form-control" name="name"
+        required></div>
+    <div class="col-md-3 mb-3"><label class="form-label">Giá</label><input class="form-control" name="price"
+        type="number" min="0" step="0.01" value="0"></div>
+    <div class="col-md-3 mb-3"><label class="form-label">Số lượng</label><input class="form-control" name="quantity"
+        type="number" min="0" value="0"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3"><label class="form-label">Danh mục</label><select class="form-control" name="category_id"
+        required>
+        <option value="">-- Chọn danh mục --</option><?php foreach ($categories as $category): ?>
+          <option value="<?= $category['id'] ?>"><?= e($category['name']) ?></option><?php endforeach; ?>
+      </select></div>
+    <div class="col-md-6 mb-3"><label class="form-label">Tác giả</label><select class="form-control" name="author_id"
+        required>
+        <option value="">-- Chọn tác giả --</option><?php foreach ($authors as $author): ?>
+          <option value="<?= $author['id'] ?>"><?= e($author['name']) ?></option><?php endforeach; ?>
+      </select></div>
+  </div>
+  <div class="mb-3"><label class="form-label">Ảnh bìa</label><input class="form-control" type="file" name="image"
+      accept="image/jpeg,image/png,image/gif,image/webp"></div>
+  <div class="mb-3"><label class="form-label">Trạng thái</label><select class="form-control" name="status">
+      <option value="1">Hiện</option>
+      <option value="0">Ẩn</option>
+    </select></div>
+  <button class="btn btn-success">Lưu</button><a class="btn btn-secondary" href="<?= BASE_URL . '?action=books' ?>">Quay
+    lại</a>
 </form>

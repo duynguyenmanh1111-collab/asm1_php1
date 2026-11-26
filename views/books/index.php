@@ -1,4 +1,38 @@
-<div class="d-flex justify-content-between align-items-center mb-3"><h2>Quản lý sách</h2><a href="<?= BASE_URL . '?action=books/create' ?>" class="btn btn-success">Thêm sách</a></div>
-<table class="table table-bordered align-middle"><thead><tr><th>#</th><th>Tên</th><th>Giá</th><th>SL</th><th>Danh mục</th><th>Tác giả</th><th>Ảnh</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>
-<?php foreach ($books as $i => $book): ?><tr><td><?= $i + 1 ?></td><td><?= e($book['name']) ?></td><td><?= number_format($book['price'], 0, ',', '.') ?></td><td><?= e($book['quantity']) ?></td><td><?= e($book['category_name']) ?></td><td><?= e($book['author_name']) ?></td><td><?php if (!empty($book['image'])): ?><img src="<?= BASE_ASSETS_UPLOADS . e($book['image']) ?>" width="70"><?php endif; ?></td><td><?= $book['status'] ? 'Hiện' : 'Ẩn' ?></td><td><a class="btn btn-info btn-sm" href="<?= BASE_URL . '?action=books/show&id=' . $book['id'] ?>">Xem</a> <a class="btn btn-primary btn-sm" href="<?= BASE_URL . '?action=books/edit&id=' . $book['id'] ?>">Sửa</a> <a class="btn btn-danger btn-sm" href="<?= BASE_URL . '?action=books/delete&id=' . $book['id'] ?>" onclick="return confirm('Xóa sách này và ảnh bìa?')">Xóa</a></td></tr><?php endforeach; ?>
-</tbody></table>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Quản lý sách</h2><a href="<?= BASE_URL . '?action=books/create' ?>" class="btn btn-success">Thêm sách</a>
+</div>
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>SL</th>
+            <th>Danh mục</th>
+            <th>Tác giả</th>
+            <th>Ảnh</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($books as $i => $book): ?>
+            <tr>
+                <td><?= $i + 1 ?></td>
+                <td><?= e($book['name']) ?></td>
+                <td><?= number_format($book['price'], 0, ',', '.') ?></td>
+                <td><?= e($book['quantity']) ?></td>
+                <td><?= e($book['category_name']) ?></td>
+                <td><?= e($book['author_name']) ?></td>
+                <td><?php if (!empty($book['image'])): ?><img src="<?= BASE_ASSETS_UPLOADS . e($book['image']) ?>"
+                            width="70"><?php endif; ?></td>
+                <td><?= $book['status'] ? 'Hiện' : 'Ẩn' ?></td>
+                <td><a class="btn btn-info btn-sm" href="<?= BASE_URL . '?action=books/show&id=' . $book['id'] ?>">Xem</a>
+                    <a class="btn btn-primary btn-sm"
+                        href="<?= BASE_URL . '?action=books/edit&id=' . $book['id'] ?>">Sửa</a> <a
+                        class="btn btn-danger btn-sm" href="<?= BASE_URL . '?action=books/delete&id=' . $book['id'] ?>"
+                        onclick="return confirm('Xóa sách này và ảnh bìa?')">Xóa</a>
+                </td>
+            </tr><?php endforeach; ?>
+    </tbody>
+</table>
