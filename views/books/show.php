@@ -1,0 +1,3 @@
+<h2>Chi tiết sách</h2>
+<table class="table table-bordered"><tr><th>ID</th><td><?= e($book['id']) ?></td></tr><tr><th>Tên</th><td><?= e($book['name']) ?></td></tr><tr><th>Giá</th><td><?= number_format($book['price'], 0, ',', '.') ?></td></tr><tr><th>Số lượng</th><td><?= e($book['quantity']) ?></td></tr><tr><th>Danh mục</th><td><?= e($book['category_name']) ?></td></tr><tr><th>Tác giả</th><td><?= e($book['author_name']) ?></td></tr><tr><th>Ảnh bìa</th><td><?php if (!empty($book['image'])): ?><img src="<?= BASE_ASSETS_UPLOADS . e($book['image']) ?>" width="180"><?php endif; ?></td></tr><tr><th>Trạng thái</th><td><?= $book['status'] ? 'Hiện' : 'Ẩn' ?></td></tr></table>
+<a class="btn btn-secondary" href="<?= BASE_URL . '?action=books' ?>">Quay lại</a>
