@@ -12,12 +12,14 @@
     <div class="col-md-6 mb-3"><label class="form-label">Danh mục</label><select class="form-control"
         name="category_id"><?php foreach ($categories as $category): ?>
           <option value="<?= $category['id'] ?>" <?= $category['id'] == $book['category_id'] ? 'selected' : '' ?>>
-            <?= e($category['name']) ?></option><?php endforeach; ?>
+            <?= e($category['name']) ?>
+          </option><?php endforeach; ?>
       </select></div>
     <div class="col-md-6 mb-3"><label class="form-label">Tác giả</label><select class="form-control"
         name="author_id"><?php foreach ($authors as $author): ?>
           <option value="<?= $author['id'] ?>" <?= $author['id'] == $book['author_id'] ? 'selected' : '' ?>>
-            <?= e($author['name']) ?></option><?php endforeach; ?>
+            <?= e($author['name']) ?>
+          </option><?php endforeach; ?>
       </select></div>
   </div>
   <?php if (!empty($book['image'])): ?>
